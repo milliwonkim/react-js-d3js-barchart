@@ -71,7 +71,7 @@ function StackedBarChart() {
             .scaleBand()
             .domain(data.map((d) => d.year))
             .range([0, width - 180])
-            .padding(0.3)
+            .padding(0.2)
 
         const yScale = d3
             .scaleLinear()
@@ -118,7 +118,11 @@ function StackedBarChart() {
             <svg ref={svgRef} />
             {allKeys.map((key) => (
                 <div key={key} className="field">
-                    {key}
+                    {key === '🥑'
+                        ? 'Avocado'
+                        : key === '🍌'
+                        ? 'Banana'
+                        : 'Grape'}
                     <input
                         id={key}
                         type="checkbox"
