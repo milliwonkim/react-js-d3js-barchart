@@ -59,7 +59,7 @@ function PercentStackedBarChart() {
             const dataNormalized = []
 
             data.forEach(function (d) {
-                let total = 0
+                let total
                 let name
                 for (let i in subgroups) {
                     name = subgroups[i]
