@@ -56,10 +56,10 @@ function PercentStackedBarChart() {
                 .domain(subgroups)
                 .range(['#e41a1c', '#377eb8', '#4daf4a'])
 
-            const dataNormalized = []
+            // const dataNormalized = []
 
             data.forEach(function (d) {
-                let total
+                let total = 0
                 let name
                 for (let i in subgroups) {
                     name = subgroups[i]
@@ -73,6 +73,7 @@ function PercentStackedBarChart() {
             })
 
             let stackedData = d3.stack().keys(subgroups)(data)
+            console.log('stackedData: ', stackedData)
 
             svg.append('g')
                 .selectAll('g')
