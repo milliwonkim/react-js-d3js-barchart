@@ -18,7 +18,6 @@ function Heatmap() {
         d3.csv(
             'https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/heatmap_data.csv'
         ).then((data) => {
-            console.log('data: ', data)
             var myGroups = d3.map(data, (d) => {
                 return d.group
             })
